@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-bqfdadpn-gitops
+  description: This is GitOps manifest for go-bqfdadpn   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-bqfdadpn
+    backstage.io/kubernetes-id: go-bqfdadpn 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: go-bqfdadpn-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-bqfdadpn
